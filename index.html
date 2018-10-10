@@ -1,17 +1,80 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
+   <head>
+      <title>Family Activity Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+   </head>
+   <body>
+      <div class="navbar navbar-inverse">
+         <div class="container-fluid">
+            <div class="navbar-header">
+                <!--<div class="navbar-brand" href="https://www.loonmtn.com/">Loon Mountain>-->
+            </div>
+            <!-- SIGN IN FORM -->
+            <form id="form-signIn" class="navbar-form navbar-right">
+               <div class="form-group">
+                  <label for="inputEmail">Email address</label>
+                  <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email" required="true">
+               </div>
+               <div class="form-group">
+                  <label for="inputPassword1">Password</label>
+                  <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
+               </div>
+               <div id="user-message-signIn" class="form-group"></div>
+               <button id="sign-in-button" type="submit" class="btn btn-primary form-group">Sign In</button>
+
+               <!-- SIGN OUT  -->
+               <button id="sign-out" class="btn btn-primary">Sign Out</button>
+               <button type="button" class="btn btn-primary pass-change" data-toggle="modal" data-target="#changepassModal">
+               Change Password
+               </button>
+               <div id="user-message-signOut"></div>
+               <div class="signup-portal">
+                  <h1> Family Activity Tracker</h1>
+                  <h3> Create your activity</h3>
+                  <button id="signupButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                  SIGN UP NOW!</button>
+               </div>
+               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                     <div class="modal-content">
+                        <div class="modal-header">
+                           <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                           </button>
+                        </div>
+                        <div class="modal-body">
+            <form id="form-signUp">
+            <div>
+            <label for="inputEmail1">Email address</label>
+            <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email">
+            </div>
+            <div>
+            <label for="inputPassword1">Password</label>
+            <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
+            </div>
+            <div>
+            <label for="inputPasswordConfirm">Password</label>
+            <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Confirm Password">
+            </div>
+            <div id="user-message-signUp"></div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="cancel-btns btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+            </div>
+            </div>
+            </form>
+         </div>
+      </div>
+   </body>
 </html>

@@ -1,0 +1,43 @@
+<!--From handlebar Example class -->
+
+{{#each skiings as |skiing|}}
+  {{log skiing}}
+
+  <div class="handlebar">
+  <h1 data-id="{{skiing.id}}"> <small>Name: {{skiing.name}}</small></h1>
+  <h2 data-id="{{skiing.id}}"> <small>Date: {{skiing.date}}</small></h2>
+  <h2 data-id="{{skiing.id}}"> <small>Location: {{skiing.location}}</small></h2>
+  <button class="btn btn-default remove-button" data-id="{{skiing.id}}">Remove Activity!</button>
+
+  <!--<button class="btn btn-default update-button" data-id="{{skiing.id}}">Update Skiing activity!</button>-->
+  </div>
+
+  <div class="handlebar">
+
+    <form class="form-updateskiing" data-id="{{skiing.id}}">
+
+      <h4> update ski activity now </h4>
+
+      <div>
+
+        <label>Ski Activity</label>
+        <input type="text" class="form-control" name="skiing[name]" placeholder="Name your Activity" required="true">
+
+      </div>
+
+      <div>
+
+        <label>Date</label>
+        <input type="text" class="form-control" name="skiing[date]" placeholder="Mark your date.." required="true">
+        <label>Location</label>
+        <input type="text" class="form-control" name="skiing[location]" placeholder=" Location for skiing..." required="true">
+        <button data-id="update-skiing" type="submit" class="btn btn-primary">Update your ski activity</button>
+
+      </div>
+
+    </form>
+  </div>
+
+  <hr>
+
+{{/each}}
