@@ -64,10 +64,10 @@ const signOutSuccess = function (data) {
   $('#user-message-signIn').html('')
   $('#sign-in-button').show()
   $('.signup-portal').show()
-  // $('#form-createFood').hide()
-  // $('#get-allFoods').hide()
+  $('#form-createSkiing').hide()
+  $('#get-allSkiings').hide()
   $('.pass-change').hide()
-  // $('#food-content').hide()
+  $('#skiing-content').hide()
   $('.form-group').show()
   document.getElementById('form-createSkiing').reset()
   document.getElementById('change-password').reset()
@@ -75,6 +75,38 @@ const signOutSuccess = function (data) {
 
 const signOutFail = function (data) {
   $('#user-message-signOut').html('try again')
+}
+// RESOURCE CREATE FOOD
+
+const createSkiingSuccess = function (data) {
+  $('#create-skiing-message').html('You have Successfully created your Skiing').fadeIn().delay(3000).fadeOut()
+  $('#form-createSkiing').show()
+  document.getElementById('form-createSkiing').reset()
+}
+const createSkiingFail = function (data) {
+  $('#create-skiing-message').html('Your Skiing was not successfully created')
+}
+
+// SHOW LISTING IF SUCCESS
+
+const showSkiingsSuccess = (data) => {
+  // console.log('data is', data)
+  if (data.skiings.length !== 0) {
+    const showSkiingsHtml = showSkiingsTemplate({ skiings: data.skiings })
+    $('.content').html(showSkiingsHtml).fadeIn()
+  } else {
+    $('.content').html('You dont have any skiings yet').fadeIn().delay(1500).fadeOut()
+    $('#get-allSkiings').show()
+  }
+  // console.log(data.skiings.length)
+}
+const clearSkiings = () => {
+  $('.content').empty()
+}
+
+const showSkiingsFail = () => {
+  $('#user-message-Unsuccess-create-skiing').html('Your Skiing was not successfully shown')
+  // console.log(error(error))
 }
 
 module.exports = {
@@ -85,5 +117,10 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFail,
   signOutSuccess,
-  signOutFail
+  signOutFail,
+  createSkiingSuccess,
+  createSkiingFail,
+  showSkiingsSuccess,
+  showSkiingsFail,
+  clearSkiings
 }

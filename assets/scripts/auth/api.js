@@ -46,10 +46,58 @@ const signOut = function (data) {
     }
   })
 }
+const createSkiings = function (skiing) {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/skiings',
+    data: skiing,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+// THIS IS SHOW RESOURCE HANDLEBARS
+
+const showSkiings = function (skiing) {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/skiings',
+    data: skiing,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteSkiings = (skiingsId) => {
+  return $.ajax({
+    url: config.apiUrl + '/skiings/' + skiingsId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateSkiings = (skiingsId, data) => {
+  return $.ajax({
+    url: config.apiUrl + '/skiings/' + skiingsId,
+    method: 'PATCH',
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createSkiings,
+  showSkiings,
+  deleteSkiings,
+  updateSkiings
 }
