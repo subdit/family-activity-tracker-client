@@ -1,4 +1,4 @@
-FAMILY ACTIVITY TRACKER CLIENT
+## FAMILY ACTIVITY TRACKER CLIENT ##
 
 Frontend Links:https://subdit.github.io/family-activity-tracker-client/
               :https://github.com/subdit/family-activity-tracker-client
@@ -6,7 +6,7 @@ Frontend Links:https://subdit.github.io/family-activity-tracker-client/
 Backend Links:https://github.com/subdit/family-activity-tracker-api
              :https://warm-sea-24073.herokuapp.com/
 
-### MORE TO COME IN DETAILS ###
+### MORE DETAILS TO COME ###
 
 
 
