@@ -76,15 +76,15 @@ const signOutSuccess = function (data) {
 const signOutFail = function (data) {
   $('#user-message-signOut').html('try again')
 }
-// RESOURCE CREATE FOOD
+// RESOURCE CREATE ACTIVITY
 
 const createSkiingSuccess = function (data) {
-  $('#create-skiing-message').html('You have Successfully created your Skiing').fadeIn().delay(3000).fadeOut()
+  $('#create-skiing-message').html('You have Successfully created your Activity').fadeIn().delay(3000).fadeOut()
   $('#form-createSkiing').show()
   document.getElementById('form-createSkiing').reset()
 }
 const createSkiingFail = function (data) {
-  $('#create-skiing-message').html('Your Skiing was not successfully created')
+  $('#create-skiing-message').html('Your Activity was not successful created')
 }
 
 // SHOW LISTING IF SUCCESS
@@ -95,7 +95,7 @@ const showSkiingsSuccess = (data) => {
     const showSkiingsHtml = showSkiingsTemplate({ skiings: data.skiings })
     $('.content').html(showSkiingsHtml).fadeIn()
   } else {
-    $('.content').html('You dont have any skiings yet').fadeIn().delay(1500).fadeOut()
+    $('.content').html('You dont have any activity yet').fadeIn().delay(1500).fadeOut()
     $('#get-allSkiings').show()
   }
   // console.log(data.skiings.length)
@@ -105,7 +105,7 @@ const clearSkiings = () => {
 }
 
 const showSkiingsFail = () => {
-  $('#user-message-Unsuccess-create-skiing').html('Your Skiing was not successfully shown')
+  $('#user-message-Unsuccess-create-skiing').html('Your Activity was not successful shown')
   // console.log(error(error))
 }
 
