@@ -1,5 +1,12 @@
 # FAMILY ACTIVITY TRACKER CLIENT #
 
+### Features to built on
+    : Add location Google maps
+    : Built calendar that be able to add comments on the Date
+    : Set up email and alert email to users
+    : Total out the activity in a week or month.
+    
+
 Frontend Links:https://subdit.github.io/family-activity-tracker-client/
               :https://github.com/subdit/family-activity-tracker-client
 
