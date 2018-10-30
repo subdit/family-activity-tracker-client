@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Family Activity</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+      <div class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <!--<div class="navbar-brand" href="https://www.loonmtn.com/">Loon Mountain>-->
+          </div>
+
+          <!-- SIGN IN FORM -->
+
+            <form id="form-signIn" class="navbar-form navbar-right">
+               <div class="form-group">
+                  <label for="inputEmail">Email address</label>
+                  <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email" required="true">
+               </div>
+               <div class="form-group">
+                  <label for="inputPassword1">Password</label>
+                  <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
+               </div>
+               <div id="user-message-signIn" class="form-group"></div>
+               <button id="sign-in-button" type="submit" class="btn btn-primary form-group">Sign In</button>
+
+               <!-- SIGN OUT  -->
+               <button id="sign-out" class="btn btn-primary">Sign Out</button>
+               <button type="button" class="btn btn-primary pass-change" data-toggle="modal" data-target="#changepassModal">
+               Change Password
+               </button>
+               <div id="user-message-signOut"></div>
+             </form>
+           </div>
+         </div>
+
+            <!--SIGN UP FORM-->
+            <img src="https://i.imgur.com/JvIbYI8.jpg" alt="display this" width=300 height=300>
+               <div class="signup-portal">
+                 <h1> Family Activity Tracker</h1>
+                 <h3> Create your activity</h3>
+                 <button id="signupButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                  SIGN UP HERE</button>
+               </div>
+               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                 <div class="modal-dialog" role="document">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                     </div>
+                     <div class="modal-body">
+                       <form id="form-signUp">
+                         <div>
+                           <label for="inputEmail1">Email address</label>
+                           <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email">
+                         </div>
+                         <div>
+                           <label for="inputPassword1">Password</label>
+                           <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
+                         </div>
+                         <div>
+                           <label for="inputPasswordConfirm">Password</label>
+                           <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Confirm Password">
+                         </div>
+                         <div id="user-message-signUp"></div>
+                         <button type="submit" class="btn btn-primary">Sign Up</button>
+                       </form>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="cancel-btns btn btn-secondary" data-dismiss="modal">Close</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </form>
+           </div>
+         </div>
+         <form id="form-createSkiing" class="resource-form">
+           <h2> Create your activity here</h2>
+           <div>
+             <label>Activity Name</label>
+             <input type="text" class="form-control" name="skiing[name]" placeholder="Name your activity" required="true">
+           </div>
+           <div>
+             <label>Date</label>
+             <input type="date" class="form-control" name="skiing[date]" placeholder="Book your date here..." required="true">
+           </div>
+           <div>
+             <label>Location</label>
+             <input type="text" class="form-control" name="skiing[location]" placeholder="Mark your activity location..." required="true">
+           </div>
+           <div id="user-message-signIn"></div>
+           <button id="create-skiing" type="submit" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Create Activity</button>
+           <div id="create-skiing-message"></div>
+         </form>
+         <div><span id="timer"></span></div>
+
+         <!-- CHANGE PASSWORD FORM -->
+         <div class="modal fade" id="changepassModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+           <div class="modal-dialog" role="document">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+               <div class="modal-body">
+                 <form id="change-password">
+                   <div>
+                     <label>Change Password</label>
+                     <input name="passwords[old]" type="password" class="form-control" placeholder="Old Password">
+                   </div>
+                   <div>
+                     <label>New Password</label>
+                     <input name="passwords[new]" type="password" class="form-control" placeholder="New Password">
+                   </div>
+                   <div id="user-message-passwordChange"></div>
+                   <button type="submit" class="btn btn-primary">Change Password</button>
+                 </form>
+               </div>
+               <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               </div>
+             </div>
+           </div>
+         </div>
+
+         <!-- GET ALL ACTIVITY RESOURCE -->
+         <button id="get-allSkiings" type="submit" class="btn btn-primary show-skiings">Show Activity data</button>
+         <div id="user-message-Unsuccess-create-activity"></div>
+         <div id="skiing-content" class="content">
+         </div>
+
+         <section :This section to add and pin point Google map on location>
+
+         <div class="mapouter">
+           <div class="gmap_canvas"><iframe width="250" height="350" id="gmap_canvas"
+           src="https://maps.google.com/maps?q=Mount%20Sunapee&t=&z=3&ie=UTF8&iwloc=&output=embed" frameborder="10" scrolling="no" marginheight="10" marginwidth="10."></iframe>
+            </div>
+           <div>
+           <a href="https://www.google.com/maps/place/Hua+Hin+District,+Prachuap+Khiri+Khan,+Thailand/@12.568452,99.9577223,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPtHXoEUy0fYqjyypK91Jls_uJkThjkZ8jZ_p-c!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPtHXoEUy0fYqjyypK91Jls_uJkThjkZ8jZ_p-c%3Dw129-h86-k-no!7i4896!8i3264!4m5!3m4!1s0x30fc5a59716311f3:0x30223bc2c367de0!8m2!3d12.568452!4d99.9577223">Hua Hin Thailand</a>
+         </div>
+           <style>.mapouter{text-align:right;height:200px;width:200px;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:350px;}
+           </style>
+         </div>
+       </section>
+       </body>
+      </html>
