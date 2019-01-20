@@ -1,8 +1,8 @@
 ## FAMILY-ACTIVITY-TRACKER ##
-The Family-Activity-Tracker repository is a full stack web application to allow the users to created their own activities within family. To use this application the user have to sign-up and sign-in.
+The Family-Activity-Tracker repository is a full stack web application to allow the users to created their own activities for the family. To use this application the user must sign-up and sign-in by using email and create password.
 
 ## The Main Concept of: Family-Activity-Tracker ##
-The main concept was inspiring by my family day to day basis routine to keep track of our family activities that we have plan out. Most of the time my wife was doing the job and keep reminding me what is going on, so as a developer, I to build the app to keep track of all the events for the kids, what to do, where to go and when it will happens. I think this application will be usefull for the family like us. The calendar will allows the user to bookmark time, date, month and year to create activities. A third party API will allows the user to search the location where the events will be by using Google's map. The app itself have a lot more features to come and still under developing.
+The main concept for Family-Activity-Tracker was inspiring by my family day to day activies routine. To keep track of our family activities that we have plan out. Most of the time my wife was doing the job and keep reminding me what is going on. So, as a developer, I want to build the application to help us keeping track of the events as a reminder. I think this application will be helpefull for a busy family like us. The calendar will allows the user to bookmark date, month and year to create the events. A third party API will allows the user to search the location where the events will be by using Google's map. The application itself has a lot more features to come and still under developing.
 
 ## User Stories ##
 1. As a user, you will be able to create an account by signUp and signIn.
@@ -37,7 +37,7 @@ A deploy link to the client side:https://subdit.github.io/family-activity-tracke
 Repository:https://github.com/subdit/family-activity-tracker-client
 
 ## The most challenging in this project ##
-One of the most challenging in this project was how to implement the calendar input in index.html file in properly way and how to present to the client side. I spent a lot of time to figure out how to mechanism this tool and I using Handlebar to solve this challenge. The second challenging was how to utilize a third party API, which I have learned, researched and tested how to implementing a Google'map in the index.html file in such a short period of time.
+One of the most challenging in this project was how to implement the calendar into the index.html file in a proper way and how to present to the client side. I spent a lot of time to figure out how to mechanism this tool and I used Handlebar to solve this challenge. The second challenging was how to utilize a third party API, which I have learned, researched and tested out how to implementing a Google'map in the index.html file in such a short period of time.
 
 ## Additional Resource ##
 Heroku Command Line: https://devcenter.heroku.com/categories/command-line
@@ -50,3 +50,5 @@ Heroku Rails Deployment: https://devcenter.heroku.com/articles/getting-started-w
 ## License ##
 All content is licensed under a CC­BY­NC­SA 4.0 license.
 All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
+
+@Copy right@kasidit_bualoeng
